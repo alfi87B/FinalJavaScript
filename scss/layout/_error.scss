@@ -1,0 +1,33 @@
+.error-404{
+    section{
+        width: 100%;
+        max-width: 75rem;
+        @include flex(row, nowrap, center, center, 2rem);
+        @include pad;
+        h1{
+            @include text(8rem, bold, center, none, $color-secundario);
+            @include pad;
+        }
+        div{
+            @include flex(column, wrap, center, start, .3125rem);
+            @include pad;
+            h2{
+                @include text(2rem, bold, left, none, black);
+            }
+            p{
+                @include text(1rem, 500, left, none, black);
+            }
+        }
+    }
+}
+footer{
+    .footer-error{
+        @include flex(row, wrap, center, start, .2rem);
+        min-height: 60vh;
+        padding: 0.2rem;
+        margin: 0.5rem 0;
+        p{
+            @include text(1rem, 400, left, none, $color-principal);
+        }
+    }
+}

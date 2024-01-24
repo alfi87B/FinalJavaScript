@@ -1,0 +1,118 @@
+
+@media (max-width: 768px){
+header{
+    position: relative;
+    padding: 0.75rem 1rem;
+    gap: 0rem;
+}
+.section-log{
+    div{
+        a{
+            font-size: 0.9em;
+        }
+    }
+    ul{
+        li{
+            a{
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+.nav-bar{
+    width: 100%;
+    @include flex(column, nowrap, center, center, 0.5rem);
+    gap: 0;
+    .logo-uno{
+        display: none;
+    }
+    .logo-dos{
+        width: 100%;
+        height: auto;
+        @include flex(row, nowrap, center, center, none);
+        padding: 0.5rem 0;
+        margin: 0;
+        @include linea-bottom;
+    }
+    section{
+        width: 100%;
+        div{ 
+            width: 90%;
+            ul{
+                justify-content: space-between; 
+                width: 100%;
+                gap: 0.5rem;
+                padding: 1rem 0.2rem;
+                li{
+                    a{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+main{
+    padding: 0.75rem 1rem;
+    .section-container{
+        .destacados{
+            flex-direction: column;
+        }
+        .seccion-info{
+            flex-direction: column;
+            gap: 0.5rem;
+            .info-info{
+                .info-titulo{
+                    font-size: 2rem;
+                }
+                .info-detalle{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .quienes-info{
+            @include grid(1fr, repeat(4, 1fr), "" "", 0, 1rem);
+            .info-img1{
+                grid-row: 1/2;
+            }
+            .info-txt1{
+                grid-row: 2/3;
+            }.info-img2{
+                grid-row: 3/4;
+            }.info-txt2{
+                grid-row: 4/5;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .img-titulo{
+        .una-linea{
+            display: none;
+        }
+        .dos-lineas{
+            width: 100%;
+            height: auto;
+            @include flex(column, nowrap, center, center, none);
+            padding: 0.1rem;
+            margin: 0 0 1rem 0;
+        }
+}
+}
+footer{
+    padding: 0.75rem 1rem;
+    .footer-error{
+        min-height: 35vh;
+    }
+}
+}
+@media (min-width: 700px){
+.contact-wrapper{
+    width: 100%;
+    max-width: 75rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+}
+

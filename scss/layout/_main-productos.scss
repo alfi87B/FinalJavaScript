@@ -1,0 +1,78 @@
+@import "../components/cards";
+main{
+    .filtro{
+        width: 100%;
+        max-width: 75rem;
+        @include flex(row, wrap, start, start, none);
+        @include linea-top;
+        padding: 0.5rem;
+        margin: 0;
+        button{
+            @include text(1rem, 400, center, none, $color-texto);
+            padding: 0.5rem;
+            margin: 0;
+            border-color: $color-secundario;
+            border-radius: 10%;
+            &:hover {
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+    }
+    .tienda-produ{
+        max-width: 75rem;
+        @include flex(row, wrap, center, center, none);
+        @include pad;
+        section{
+            width: 100%;
+            @include flex(row, wrap, space-around, center, .3rem);
+            padding: 0.2rem 0rem 0 0.5rem;
+            margin: 0;
+            .card-cont{
+                display: flex;
+                @include pad;
+            }
+        }
+    }
+    .banner-secundario{
+        max-width: 75rem;
+        display: flex;
+        @include pad;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.filtro-titulo{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.filtro-busqueda{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin-bottom: 0.5rem;
+            &:hover {
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+}
+.busca-cart {
+    .cart {
+        position: relative;
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red; // Color de fondo del contador
+            color: white; // Color del texto del contador
+            border-radius: 50%;
+            padding: 0.2rem 0.4rem;
+            font-size: 0.8rem;
+        }
+    }
+}

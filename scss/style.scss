@@ -1,0 +1,27 @@
+/****Primero llamar siempre > variable, mixins y mapas = utilities****/
+@import "./utilities/variables";
+@import "./utilities/mixins";
+@import "./base/typos";
+/***reset**/
+@import "./base/reset";
+/**HEADER+NAV**/
+@import "./layout/header";
+@import "./layout/nav-bar";
+/**MAINS**/
+@import "./layout/main";
+@import "./layout/main-index";
+@import "./layout/main-productos";
+@import "./components/cards";
+@import "./layout/cart";
+/**404**/
+@import "./layout/error";
+/**FOOTER**/
+@import "./layout/footer";
+/**Media Queries**/
+@import "./layout/media/media1024";
+@import "./layout/media/media900";
+@import "./layout/media/media768";
+@import "./layout/media/media650";
+@import "./layout/media/media375";
+
+

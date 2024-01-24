@@ -1,0 +1,58 @@
+.card {
+    width: 17.5rem;
+    height: 38rem;
+    @include flex(column, nowrap, center, center, none);
+    border-radius:1%;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px grey;
+    padding: 0.2rem;
+    margin: 0px 0px 1rem 0px;
+    transition: all 0.6s ease;
+    img{
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+    }
+    div{
+        width: 100%;
+        height: 15rem;
+        padding: 1rem;
+        margin: 0;
+        @include flex(column, wrap, start, center, 0.3rem);
+        h5{
+            @include text(1rem, 500, center, none, $color-texto);
+            padding: 0.2rem;
+            margin: 0;
+        }
+        h4{
+            @include text(2rem, 800, center, none, $color-texto);
+            padding: 0.2rem;
+            margin: 0;
+        }
+        p{
+            @include text(1.2rem, 500, center, none, $color-texto);
+            padding: 0.2rem;
+            margin: 0;
+        }
+        button{
+            width: 90%;
+            height: auto;
+            @include text(1.2rem, 400, center, none, $color-principal);
+            background-color: $color-secundario;
+            border-radius: 0.5rem;
+            border-bottom: 4px solid $color-sombras;
+            box-shadow: 2px 2px 5px grey;
+            padding: 0.2rem;
+            margin: 0;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1)
+            }
+        }
+    }
+    &:hover{
+        background-color: $efectocard1;
+        box-shadow: 0 0 20px var($color-sombras);
+        border-color: 2px solid var( $color-secundario);
+    }
+}

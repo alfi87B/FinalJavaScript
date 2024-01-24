@@ -1,0 +1,139 @@
+
+@media (max-width: 650px){
+    header{
+        @include pad;
+        gap: 0rem;
+    }
+    .section-log{
+        justify-content: center;
+        div{
+            display: none;
+        }
+        ul{
+            width: 90%;
+            @include flex(row, nowrap, space-between,center, 1rem)
+        }
+    }
+    .nav-bar{
+        section{
+            width: 100%;
+            @include flex(column, wrap, center, center, 0);
+            label{
+                display: flex;
+                flex-direction: column;
+                color: white;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                padding: 0rem 0.2rem; 
+                i{
+                    font-size: 3rem;
+                }
+            }
+            #toggle:checked ~ div{
+                height: 100%;
+            }
+            div{
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                flex-direction: column;
+                padding: 0rem;
+                ul{
+                    width: 100%;
+                    flex-direction: column;
+                    border: 1px solid $color-secundario;
+                    border-radius: 5px;
+                    li{
+                        width: 100%;
+                        @include flex(column, wrap, center, center, 0.2rem);
+                        @include linea-bottom;
+                        padding: 0.5rem 0;
+                    }
+                }
+            }
+        }
+        div{
+            width: 80%;
+            @include flex(row, nowrap, space-around, center, 0.2rem);
+            .buscador{
+                input{
+                    width: 100%;
+                    max-width: 40rem;
+                    min-width: 6.25rem;
+                    height: 2rem;
+                }
+                img{
+                    height: 2.5rem;
+                }
+            }
+            .cart{
+                width: 20%;
+                padding: 0;
+                img{
+                    height: 3rem;
+                }
+            }
+        }
+    }
+    main{
+        @include pad;
+        .section-container{
+            .quienes-info{
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .talles{
+            @include pad;
+                table{
+                    width: 100%
+                }
+        }
+    }
+    footer{
+        @include pad;
+        .footer-section{
+            flex-direction: column;
+            gap: 1rem;
+            div{
+                @include linea-bottom;
+                
+                ul{
+                    gap: 16px;
+                    padding: 0 1rem 0.5rem 0;
+                }
+                .medio-pago{
+                    padding: 0 1rem 0.5rem 0;
+                    li{
+                        img{
+                            height: 2rem;
+                        }
+                    }
+                }
+                .contacto{
+                    li{
+                        a{
+                            img{
+                                height: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-copy{
+            justify-content: center;
+        }
+        .footer-error{
+            min-height: 5vh;
+        }
+    }
+    .error-404{
+        section{
+            flex-direction: column;
+            }
+        }
+}
+

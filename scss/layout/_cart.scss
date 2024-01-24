@@ -1,0 +1,14 @@
+main{
+    .cart-section{
+        @include flex(column, nowrap, center, center, none);
+        width: 80%;
+        .h1-secciones, .cart-summary h2 {
+            @include flex(column, nowrap, start, start, none);
+            text-align: left;
+            text-transform: uppercase;
+            border-bottom: 2px solid $color-secundario;
+            padding-bottom: 5px;
+        }
+    }
+}
+

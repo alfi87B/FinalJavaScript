@@ -1,0 +1,34 @@
+@media (max-width: 375px){
+main{
+    .talles{
+        article{
+            table{
+                thead{
+                    tr{
+                        th{
+                            font-size: 0.7rem;
+                            padding: 0.2rem 0.5rem;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            font-size: 0.7rem;
+                            padding: 0.2rem 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+footer{
+    .footer-copy, .footer-error{
+        p{
+            @include text(0.7rem, 400, left, none, $color-principal);
+        }
+    }
+}
+}
