@@ -1,6 +1,7 @@
-import productos from './productos-lista.js';
+import { productos, cargarProductos } from './productos-lista.js';
 
-document.addEventListener("DOMContentLoaded", function () {
+async function inicializar() {
+    await cargarProductos();
 
     const botonesAgregar = document.querySelectorAll(".agregar-al-carrito");
     const filtroCategorias = document.getElementById("filtroCategorias");
@@ -68,4 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
         cartIcon.appendChild(cantidadElement);
     }
-});
+}
+
+document.addEventListener("DOMContentLoaded", inicializar);

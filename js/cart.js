@@ -1,9 +1,12 @@
-import productos from './productos-lista.js';
+import { productos, cargarProductos } from './productos-lista.js';
+
 
 document.addEventListener("DOMContentLoaded", function () {
     mostrarProductosEnCarrito();
 
-    function mostrarProductosEnCarrito() {
+    async function mostrarProductosEnCarrito() {
+        await cargarProductos(); // Esperamos a que se carguen los productos
+
         const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         const cartItemsContainer = document.querySelector(".cart-items");
 
@@ -70,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return carrito.reduce((total, item) => {
             const producto = productos.find(producto => producto.id === item.productId);
             const precioUnitario = producto ? producto.precio : 0;
-            // const precioUnitario = item.precioUnitario || 0;
             return total + precioUnitario * item.cantidad;
         }, 0);
     }
