@@ -21,10 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function mostrarProductoEnCarrito(item) {
         const cartItemsContainer = document.querySelector(".cart-items");
         const productoHTML = document.createElement("div");
-
+    
         const precioUnitario = item.precioUnitario || 0;
+    
+        if (typeof precioUnitario !== 'number') {
+            console.error("Error: precioUnitario no es un número:", precioUnitario);
+            return;
+        }
+    
         const total = precioUnitario * item.cantidad;
-
+    
         productoHTML.innerHTML = `
             <div>
                 <h3>Producto: ${obtenerNombreProducto(item.productId)}</h3>
@@ -36,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
         cartItemsContainer.appendChild(productoHTML);
     }
+    
 
     function obtenerNombreProducto(productId) {
         const producto = productos.find(producto => producto.id === productId);
@@ -69,11 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function confirmarCompra() {
-        alert("¡Compra confirmada! Gracias por tu compra.");
-
-        limpiarCarrito();
-
-        window.location.href = "../index.html";
+        Swal.fire({
+            icon: 'success',
+            title: '¡Compra confirmada!',
+            text: 'Gracias por tu compra.',
+            confirmButtonColor: '#7D2FF6',
+        }).then(() => {
+            limpiarCarrito();
+            window.location.href = "../index.html";
+        });
     }
 
     function limpiarCarrito() {

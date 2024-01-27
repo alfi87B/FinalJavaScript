@@ -13,9 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Contraseña:", password);
 
         if (verificarCredenciales(username, password)) {
-            window.location.href = 'page/productos.html';
+            Swal.fire({
+                icon: 'success',
+                title: '¡Inicio de sesión exitoso!',
+                text: 'Redirigiendo a la página de productos...',
+                confirmButtonColor: '#7D2FF6',
+            }).then(() => {
+                window.location.href = 'page/productos.html';
+            });
         } else {
-            alert("Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo o regístrese.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo o regístrese.',
+            });
         }
     });
 
@@ -30,7 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         registrarUsuario(newUsername, newPassword);
 
-        window.location.href = 'page/productos.html';
+        Swal.fire({
+            icon: 'success',
+            title: '¡Registro exitoso!',
+            text: 'Redirigiendo a la página de productos...',
+            confirmButtonColor: '#7D2FF6',
+        }).then(() => {
+            window.location.href = 'page/productos.html';
+        });
     });
 
     function verificarCredenciales(username, password) {
@@ -43,7 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
         
         if (usuariosRegistrados.some(user => user.username === username)) {
-            alert("Este usuario ya está registrado. Por favor, elija otro nombre de usuario.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Este usuario ya está registrado. Por favor, elija otro nombre de usuario.',
+                confirmButtonColor: '#7D2FF6',
+            });
             return;
         }
 
@@ -52,3 +75,4 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
     }
 });
+

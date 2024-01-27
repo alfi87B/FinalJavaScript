@@ -5,13 +5,13 @@ export async function obtenerCotizacionDolarBlue() {
 
         const dolarBlue = data.find(item => item.casa.nombre === 'Dolar Blue');
 
-    if (dolarBlue) {
-        const compra = dolarBlue.casa.compra;
-        const venta = dolarBlue.casa.venta;
+        if (dolarBlue) {
+            const compra = dolarBlue.casa.compra;
+            const venta = dolarBlue.casa.venta;
 
-        return { compra, venta };
+            return { compra, venta };
         } else {
-        throw new Error('No se encontró la cotización del dólar blue');
+            throw new Error('No se encontró la cotización del dólar blue');
         }
     } catch (error) {
         console.error('Error al obtener la cotización del dólar blue', error);
